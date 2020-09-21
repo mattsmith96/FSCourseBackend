@@ -1,0 +1,28 @@
+{
+  "name": "fscoursebackend",
+  "version": "0.1.0",
+  "description": "Backend for the FullStackOpen Course",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"No test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattsmith96/FSCourseBackend.git"
+  },
+  "author": "Matthew Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattsmith96/FSCourseBackend/issues"
+  },
+  "homepage": "https://github.com/mattsmith96/FSCourseBackend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
