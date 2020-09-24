@@ -1,5 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 const app = express()
 
 morgan.token('postData', (req, res) => {
@@ -8,6 +9,7 @@ morgan.token('postData', (req, res) => {
   }
 })
 
+app.use(cors())
 app.use(express.json())
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :postData'))
 
@@ -62,7 +64,6 @@ const generateID = () => {
 
 app.post('/api/persons', (req, res) => {
   const body = req.body
-  console.log('POST body:', body )
 
   if (!body.name || !body.number) {
     return ( res.status(400).json({
@@ -88,7 +89,6 @@ app.post('/api/persons', (req, res) => {
 
 app.delete('/api/persons/:id', (req, res) => {
   const id = Number(req.params.id)
-  console.log('DELETE id: ', id )
   persons = persons.filter(person => person.id !== id)
   res.status(204).end()
 })
